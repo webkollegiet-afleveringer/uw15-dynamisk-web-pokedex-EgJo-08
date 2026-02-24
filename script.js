@@ -25,7 +25,7 @@ function fetchPokemon(page) {
                     <div class="items">
                         <h2>${pokemon.name}</h2>
                         <a href="destination.html?id=${id}">
-                            Se mere
+                            Se mere om ${pokemon.name}
                         </a>
                     </div>`;
 
