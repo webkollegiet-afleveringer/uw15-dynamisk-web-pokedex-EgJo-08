@@ -45,25 +45,56 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     );
 
     const formattedId = String(id).padStart(3, "0");
-
+    document.body.className = data.types[0].type.name;
     container.innerHTML = `
-      <h1>${data.name}</h1>
-      <img src="${data.sprites.front_default}" />
-      <p id="number">#${formattedId}</p>
+  <article class="pokemon-card">
 
-      <h3>Abilities</h3>
-      <ul>${abilitiesList}</ul>
+    <div class="hero">
+      <h1 class="name">${data.name}</h1>
+      <span class="number">#${formattedId}</span>
+      <img class="pokemon-img" src="${data.sprites.other['official-artwork'].front_default}" />
+    </div>
 
-      <h3>Generation</h3>
-      <p class = "big"> ${speciesData.generation.name}</p>
+    <div class="content">
 
-      <h3>Type</h3>
-      <ul>${typelist}</ul>
+      <div class="type-row">
+        ${data.types.map(t => `
+          <span class="type ${t.type.name}">
+            ${t.type.name}
+          </span>
+        `).join("")}
+      </div>
 
-      <h3>Weight</h3>
-      <p>${data.weight} kg</p>
+      <section class="info-block">
+        <h3>About</h3>
+        <div class="about-grid">
+          <div>
+            <span class="label">Weight</span>
+            <span>${data.weight / 10} kg</span>
+          </div>
+          <div>
+            <span class="label">Height</span>
+            <span>${data.height / 10} m</span>
+          </div>
+          <div>
+            <span class="label">Generation</span>
+            <span class ="big">${speciesData.generation.name}</span>
+          </div>
+        </div>
+      </section>
 
-      <h3>Forms</h3>
-      <ul>${formsList}</ul>
-    `;
+      <section class="info-block">
+        <h3>Abilities</h3>
+        <ul class="simple-list">${abilitiesList}</ul>
+      </section>
+
+      <section class="info-block">
+        <h3>Forms</h3>
+        <ul class="simple-list">${formsList}</ul>
+      </section>
+
+    </div>
+
+  </article>
+`;
   });

@@ -65,7 +65,7 @@ function loadPokemon() {
                 const formattedId = String(id).padStart(3, "0");
                 listitem.innerHTML = `
                     <div class="items">
-                    <p id="number">#${formattedId}</p>
+                    <p class="number">#${formattedId}</p>
                     <img src="${artworkUrl}/${id}.png">
                         <h2>${pokemon.name}</h2>
                         <a href="destination.html?id=${id}">
