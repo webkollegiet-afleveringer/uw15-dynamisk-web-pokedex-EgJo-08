@@ -8,6 +8,7 @@ let allPokemon = [];
 let searchMode = false;
 let allLoaded = false;
 
+
 function loadAllPokemon() {
     return fetch(`https://pokeapi.co/api/v2/pokemon?limit=100000`)
         .then(res => res.json())
@@ -43,7 +44,7 @@ const sentinel = document.createElement("div");
 sentinel.id = "scroll-trigger";
 listElement.after(sentinel);
 scrollObserver.observe(sentinel);
-
+const artworkUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork"
 
 function loadPokemon() {
     loading = true;
@@ -61,9 +62,11 @@ function loadPokemon() {
 
                 const listitem = document.createElement("div");
                 const id = pokemon.url.split("/").filter(Boolean).pop();
-
+                const formattedId = String(id).padStart(3, "0");
                 listitem.innerHTML = `
                     <div class="items">
+                    <p id="number">#${formattedId}</p>
+                    <img src="${artworkUrl}/${id}.png">
                         <h2>${pokemon.name}</h2>
                         <a href="destination.html?id=${id}">
                             Se mere om ${pokemon.name}
@@ -91,23 +94,23 @@ document.getElementById('searchbar').addEventListener('input', async function (e
 
     const searchTerm = event.target.value.toLowerCase();
 
-   
+
     if (searchTerm.length > 0) {
 
         searchMode = true;
 
-        
+
         scrollObserver.unobserve(sentinel);
 
-       
+
         if (!allLoaded) {
             await loadAllPokemon();
         }
 
-        
+
         listElement.innerHTML = "";
 
-        
+
         const filtered = allPokemon.filter(pokemon =>
             pokemon.name.toLowerCase().includes(searchTerm)
         );
@@ -116,13 +119,15 @@ document.getElementById('searchbar').addEventListener('input', async function (e
 
             const listitem = document.createElement("div");
             const id = pokemon.url.split("/").filter(Boolean).pop();
-
+            const formattedId = String(id).padStart(3, "0");
             listitem.innerHTML = `
                 <div class="items visible">
-                    <h2>${pokemon.name}</h2>
-                    <a href="destination.html?id=${id}">
-                        Se mere om ${pokemon.name}
-                    </a>
+                      <p id="number">#${formattedId}</p>
+                    <img src="${artworkUrl}/${id}.png">
+                        <h2>${pokemon.name}</h2>
+                        <a href="destination.html?id=${id}">
+                            Se mere om ${pokemon.name}
+                        </a>
                 </div>
             `;
 
