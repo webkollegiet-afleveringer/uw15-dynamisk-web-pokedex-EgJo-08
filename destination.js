@@ -44,6 +44,8 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
       item => item.url
     );
 
+    const color = data.types[0].type.name;
+
     const formattedId = String(id).padStart(3, "0");
     document.body.className = data.types[0].type.name;
     container.innerHTML = `
@@ -66,7 +68,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
       </div>
 
       <section class="info-block">
-        <h3>About</h3>
+        <h3 class = "color ${color}">About</h3>
         <div class="about-grid">
           <div>
             <span class="label">Weight</span>
@@ -84,12 +86,12 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
       </section>
 
       <section class="info-block">
-        <h3>Abilities</h3>
+        <h3 class = "color ${color}">Abilities</h3>
         <ul class="simple-list">${abilitiesList}</ul>
       </section>
 
       <section class="info-block">
-        <h3>Forms</h3>
+        <h3 class = "color ${color}">Forms</h3>
         <ul class="simple-list">${formsList}</ul>
       </section>
 

@@ -37,6 +37,26 @@ body.ghost { background: linear-gradient(135deg, #705898, #4a3a6a); }
 body.steel { background: linear-gradient(135deg, #B8B8D0, #8f8faa); }
 body.flying { background: linear-gradient(135deg, #A890F0, #7864c8); }
 
+.color.grass { color: #78C850; }
+.color.poison { color: #A040A0; }
+.color.fire { color: #F08030; }
+.color.water { color: #6890F0; }
+.color.electric { color: #F8D030; color: black; }
+.color.normal { color: #A8A878; }
+.color.bug { color: #A8B820; }
+.color.psychic { color: linear-gradient(135deg, #F85888, #c02f5a); }
+.color.ice { color: linear-gradient(135deg, #98D8D8, #62b4b4); }
+.color.dragon { color: linear-gradient(135deg, #7038F8, #4020b0); }
+.color.dark { color: linear-gradient(135deg, #705848, #3f2f24); }
+.color.fairy { color: linear-gradient(135deg, #EE99AC, #c76a82); }
+.color.fighting { color: linear-gradient(135deg, #C03028, #8f1d17); }
+.color.ground { color: linear-gradient(135deg, #E0C068, #b89a42); }
+.color.rock { color: linear-gradient(135deg, #B8A038, #8b7624); }
+.color.ghost { color: linear-gradient(135deg, #705898, #4a3a6a); }
+.color.steel { color: linear-gradient(135deg, #B8B8D0, #8f8faa); }
+.color.flying { color: linear-gradient(135deg, #A890F0, #7864c8); }
+
+
 .pokemon-card {
   width: 100%;
   max-width: 420px;
@@ -120,7 +140,6 @@ body.flying { background: linear-gradient(135deg, #A890F0, #7864c8); }
 .info-block h3 {
   text-align: center;
   margin-bottom: 15px;
-  color: #78C850;
 }
 
 .about-grid {
