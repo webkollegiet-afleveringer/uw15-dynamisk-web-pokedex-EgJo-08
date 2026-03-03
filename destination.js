@@ -19,7 +19,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         .map(item => `
           <li>
             <a href="${getUrl(item)}" target="_blank">
-              ${getName(item)}
+              ${getName(item)}x
             </a>
           </li>
         `)

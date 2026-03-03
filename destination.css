@@ -101,6 +101,17 @@ body.flying { background: linear-gradient(135deg, #A890F0, #7864c8); }
 .type.electric { background: #F8D030; color: black; }
 .type.normal { background: #A8A878; }
 .type.bug { background: #A8B820; }
+.type.psychic { background: linear-gradient(135deg, #F85888, #c02f5a); }
+.type.ice { background: linear-gradient(135deg, #98D8D8, #62b4b4); }
+.type.dragon { background: linear-gradient(135deg, #7038F8, #4020b0); }
+.type.dark { background: linear-gradient(135deg, #705848, #3f2f24); }
+.type.fairy { background: linear-gradient(135deg, #EE99AC, #c76a82); }
+.type.fighting { background: linear-gradient(135deg, #C03028, #8f1d17); }
+.type.ground { background: linear-gradient(135deg, #E0C068, #b89a42); }
+.type.rock { background: linear-gradient(135deg, #B8A038, #8b7624); }
+.type.ghost { background: linear-gradient(135deg, #705898, #4a3a6a); }
+.type.steel { background: linear-gradient(135deg, #B8B8D0, #8f8faa); }
+.type.flying { background: linear-gradient(135deg, #A890F0, #7864c8); }
 
 .info-block {
   margin-bottom: 25px;
