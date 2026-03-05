@@ -176,3 +176,20 @@ body.flying { background: linear-gradient(135deg, #A890F0, #7864c8); }
 .simple-list a:hover {
   color: #78C850;
 }
+
+.nav-arrow {
+    position: absolute;
+    top: 250px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.prev {
+    left: 50px;
+}
+ 
+.next {
+    right: 50px;
+}

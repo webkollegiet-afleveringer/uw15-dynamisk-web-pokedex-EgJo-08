@@ -55,6 +55,8 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
       <h1 class="name">${data.name}</h1>
       <span class="number">#${formattedId}</span>
       <img class="pokemon-img" src="${data.sprites.other['official-artwork'].front_default}" />
+      <a href="?id=${data.id - 1}" class="nav-arrow prev" ${data.id > 1 ? '' : 'style="display:none"'} ><--</a>
+      <a href="?id=${data.id + 1}" class="nav-arrow next" >--></a>
     </div>
 
     <div class="content">
