@@ -111,9 +111,15 @@ document.getElementById('searchbar').addEventListener('input', async function (e
         listElement.innerHTML = "";
 
 
-        const filtered = allPokemon.filter(pokemon =>
-            pokemon.name.toLowerCase().includes(searchTerm)
-        );
+        const filtered = allPokemon.filter(pokemon => {
+            const id = pokemon.url.split("/").filter(Boolean).pop();
+
+            return (
+                pokemon.name.toLowerCase().includes(searchTerm) ||
+                id.includes(searchTerm)
+            );
+        });
+
 
         filtered.forEach(pokemon => {
 
